@@ -37,4 +37,10 @@ RUN pip install --no-cache-dir notebook==5.0.0 jupyterhub==0.7.2 ipywidgets==5.2
 ADD requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
+# interact notebook extension
+RUN pip install git+https://github.com/data-8/nbpuller.git@ad45d55 && \
+	jupyter serverextension enable --sys-prefix --py nbpuller && \
+	jupyter nbextension install --sys-prefix --py nbpuller && \
+	jupyter nbextension enable --sys-prefix --py nbpuller
+
 EXPOSE 8888
