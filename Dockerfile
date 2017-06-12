@@ -38,7 +38,7 @@ ADD requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 # interact notebook extension
-RUN pip install git+https://github.com/data-8/nbpuller.git@ad45d55 && \
+RUN pip install git+https://github.com/data-8/nbpuller.git@8142e3c && \
 	jupyter serverextension enable --sys-prefix --py nbpuller && \
 	jupyter nbextension install --sys-prefix --py nbpuller && \
 	jupyter nbextension enable --sys-prefix --py nbpuller
