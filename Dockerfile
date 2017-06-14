@@ -43,4 +43,7 @@ RUN pip install git+https://github.com/data-8/nbpuller.git@8142e3c && \
 	jupyter nbextension install --sys-prefix --py nbpuller && \
 	jupyter nbextension enable --sys-prefix --py nbpuller
 
+# permit additional github orgs/accounts
+ENV ALLOWED_GITHUB_ACCOUNTS data-8:data-8r
+
 EXPOSE 8888
