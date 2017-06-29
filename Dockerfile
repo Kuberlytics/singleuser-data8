@@ -30,7 +30,7 @@ WORKDIR /home/jovyan
 USER jovyan
 RUN python3 -m venv ${APP_DIR}/venv
 
-RUN pip install --no-cache-dir notebook==5.0.0 jupyterhub==0.7.2 ipywidgets==5.2.3 jupyterlab==0.23.2 && \
+RUN pip install --no-cache-dir notebook==5.0.0 jupyterhub==0.7.2 ipywidgets==6.0.0 jupyterlab==0.23.2 && \
     jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     jupyter serverextension enable --py jupyterlab --sys-prefix
 
