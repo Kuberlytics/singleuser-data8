@@ -11,7 +11,10 @@ RUN apt-get update && \
             build-essential \
             tar \
             git \
-            locales && \
+            locales \
+            golang \
+            libjpeg-turbo8-dev \
+            make && \
     apt-get purge && apt-get clean
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
@@ -42,5 +45,5 @@ RUN pip install git+https://github.com/data-8/nbpuller.git@8142e3c && \
 	jupyter serverextension enable --sys-prefix --py nbpuller && \
 	jupyter nbextension install --sys-prefix --py nbpuller && \
 	jupyter nbextension enable --sys-prefix --py nbpuller
-
+COPY src/ /srv/app/src/
 EXPOSE 8888
